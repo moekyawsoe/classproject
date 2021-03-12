@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title><%= title %></title>
+        <%- include('./common/head') %>
+
+    </head>
+    <body class="sb-nav-fixed">
+      <%- include('./common/nav') %>
+
+        <%- include('./common/menu') %>
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <span>Back</span>
+                        <h1 class="mt-4 mb-5 d-b">Edit User</h1>
+
+                        <% if (error) { %>
+                          <div class="alert alert-danger" role="alert"><%- error %></div>
+                          <% } %>
+
+                            <div class="card">
+                              <div class="card-header">
+                              Edit User
+                            </div>
+                                <div class="card-body">
+                                    <form action="/userlist/update/<%= data ? data.id : '' %>" method="post">
+                                      <div class="form-group">
+                                        <label>ID:</label>
+                                        <input type="text" class="form-control" name="id" value="<%= data.id %>" autocomplete="off">
+                                    </div>
+                                        <div class="form-group">
+                                            <label>Name:</label>
+                                            <input type="text" class="form-control" name="name" value="<%= data.name %>" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email :</label>
+                                            <input type="text" class="form-control" name="email" value="<%= data ? data.email : '' %>" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                          <label>Password :</label>
+                                          <input type="text" class="form-control" name="password" value="" autocomplete="off">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>ConfirmPassword :</label>
+                                        <input type="text" class="form-control" name="confirmpassword" value="" autocomplete="off">
+                                    </div>
+                                        <div class="form-group">
+                                          <label>User Photo :</label>
+                                          <div class="custom-file">
+                                            <input type="file" class="custom-file-input customFileImg" id="customFileImg" name="customFileImg" accept=""/>
+                                            <label class="custom-file-label" for="customFileImg">Choose file</label>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-info" value="Update"/>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </main>
+                <%- include('./common/footer') %>
+            </div>
+        </div>
+
+        <%- include('./common/script') %>
+    </body>
+</html>

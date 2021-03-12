@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  cookie: { maxAge: 360000 },
+  cookie: { maxAge: 600000 },
   store: new session.MemoryStore,
   saveUninitialized: true,
   resave: 'true',
@@ -35,7 +35,7 @@ app.use(flash());
 app.locals.title = "Admin Template";
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/userlist', usersRouter);
 app.use('/',authRouter);
 
 // catch 404 and forward to error handler

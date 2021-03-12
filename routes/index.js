@@ -13,19 +13,19 @@ router.get('/error', function(req, res, next) {
   res.render('error');
 });
 
-router.get('/login',function(req, res){
+router.get('/login', function(req, res){
   res.render('login');
 });
 
-router.get('/register',function(req, res, next){
-  res.render('register');
+router.get('/register', function(req, res, next){
+  res.render('register',{error:"",data:""});
 });
 
-router.get('/forgetpassword',function(req, res, next){
+router.get('/forgetpassword', function(req, res, next){
   res.render('forget-password');
 });
 
-router.get('/newpage',function(req, res){
+router.get('/newpage', function(req, res){
   res.render('newpage');
 });
 
